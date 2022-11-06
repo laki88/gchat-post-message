@@ -12,9 +12,6 @@ import java.io.IOException;
 
 public class GChatBotApplication extends Application {
 
-//    @FXML
-//    ListView spaceListView;
-
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GChatBotApplication.class.getResource("post-message.fxml"));

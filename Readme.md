@@ -1,7 +1,8 @@
+Note that following configuration can be done only for a Google admin workspace account. Since the configuration is not 
+possible for a normal gmail account, this application cannot be used for to post messages to spaces in a normal gmail account
 ### Prerequisites
 1. java 19 openjdk 
 2. maven 3.8
-
 ### How to run from intellij
 
 1. Import the project in Intellij

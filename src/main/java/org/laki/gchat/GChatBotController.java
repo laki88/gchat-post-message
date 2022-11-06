@@ -7,10 +7,16 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
+import java.net.URLDecoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Properties;
 import com.google.gson.Gson;
@@ -21,9 +27,6 @@ public class GChatBotController {
     @FXML
     private TextArea messageView;
     @FXML
-    private Button sendButton;
-
-    @FXML
     private Label statusLabel;
 
     private Properties spaceToBotURL = new Properties();
@@ -33,8 +36,7 @@ public class GChatBotController {
 
     public GChatBotController() {
         String resourceName = "space_to_webhook.properties"; // could also be a constant
-        ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        try(InputStream resourceStream = loader.getResourceAsStream(resourceName)) {
+        try(InputStream resourceStream = Files.newInputStream(Paths.get( "conf/" + resourceName))) {
             spaceToBotURL.load(resourceStream);
         } catch (IOException e) {
             //todo log the error
