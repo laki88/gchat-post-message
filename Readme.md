@@ -16,4 +16,4 @@ possible for a normal gmail account, this application cannot be used for to post
 1. Update the space_to_webhook.properties as specified above
 2. run mvn clean package from project root
 3. go to the target folder
-4. run project with `java -jar jclass-post-message-1.0-SNAPSHOT.jar`
+4. run project with `java -jar jclass-post-message-1.0.0.jar`
